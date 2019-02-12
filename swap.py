@@ -13,8 +13,7 @@ def readSeqRecordList(fastaFname):
 def acquireFastPlastStyleID(seqRecordList):
     for seqRecord in seqRecordList:
         fastplastStyleID = seqRecord.id
-        print(fastplaststuff.geneAndOrganismSeparator(fastplastStyleID))
-        print(fastplastStyleID)
+        names = fastplaststuff.geneAndOrganismSeparator(fastplastStyleID)
 
 def formatIDsToTargetsFile(seqRecordList):
     for seqRecord in seqRecordList:
@@ -35,6 +34,7 @@ def writeNamesWithMoreThanOneUnderscoreToStderr(seqRecordList):
 fastaFname = sys.argv[1]
 seqRecordList = readSeqRecordList(fastaFname)
 #print(seqRecordList)
+print(fastplaststuff.names.makeTargetsFileFormattedID())
 acquireFastPlastStyleID(seqRecordList)
 #formatIDsToTargetsFile(seqRecordList)
 #targetsFastaFname = sys.argv[2]

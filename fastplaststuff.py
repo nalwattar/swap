@@ -8,6 +8,10 @@ class Names(object):
         self.gene = gene
         self.organism = organism
 
+    def makeTargetsFileFormattedID(self):
+        formattedID = '%s-%s' % (self.organism, self.gene)
+        return formattedID
+
 def geneAndOrganismSeparator(fastPlastStyleID):
     m = re.match('([^-]+)_([0-9]+)$', fastPlastStyleID)
     if m is not None:
@@ -30,3 +34,4 @@ class NamesTestCase(unittest.TestCase):
 
 if __name__== '__main__':
     unittest.main()
+
